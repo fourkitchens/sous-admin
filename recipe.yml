@@ -2,6 +2,8 @@ name: 'Sous Admin'
 description: 'A recipe that contains modules, themes, and configuration for the Sous administration experience.'
 type: 'Site'
 install:
+  # Install core dependencies.
+  - node
   # Install Gin theme and base modules that extend it.
   - gin
   - gin_toolbar
