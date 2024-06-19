@@ -7,7 +7,7 @@ See https://www.drupal.org/files/issues/2023-10-01/Configuring%20Drupal%20to%20A
 
 ## Installing this Recipe
 
-`composer require sous-starter/sous-admin`
+`composer require fourkitchens/sous-admin`
 
 ## Applying this Recipe
 
