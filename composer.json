@@ -13,6 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "drupal/admin_toolbar": "*",
+        "drupal/config_log": "^4.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/field_group": "^3.4",
         "drupal/field_states_ui": "^3.0",
