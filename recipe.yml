@@ -12,6 +12,8 @@ install:
   - admin_toolbar
   - admin_toolbar_search
   - admin_toolbar_tools
+  # Install Config log.
+  - config_log
   # Install Gin theme and base modules that extend it.
   - gin
   - gin_toolbar
