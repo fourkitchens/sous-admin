@@ -19,8 +19,8 @@ install:
   - entity_usage
   # Install Field Group and dependencies
   - field_group
-  # Install Field States UI
-  - field_states_ui
+  # Install Conditional Fields
+  - conditional_fields
   # Install Login Destination
   - login_destination
   # Install Login History
