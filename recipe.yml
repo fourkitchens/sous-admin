@@ -12,6 +12,8 @@ install:
   - admin_toolbar
   - admin_toolbar_search
   - admin_toolbar_tools
+  # Install Config log.
+  - config_log
   # Install Gin theme and base modules that extend it.
   - gin
   - gin_toolbar
@@ -21,6 +23,8 @@ install:
   - field_group
   # Install Conditional Fields
   - conditional_fields
+  # Install Field UI
+  - field_ui
   # Install Login Destination
   - login_destination
   # Install Login History
@@ -44,7 +48,6 @@ config:
       - gin.settings
       - block.block.gin_breadcrumbs
       - block.block.gin_content
-      - block.block.gin_help
       - block.block.gin_local_actions
       - block.block.gin_messages
       - block.block.gin_page_title
