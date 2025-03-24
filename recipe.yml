@@ -12,6 +12,8 @@ install:
   - admin_toolbar
   - admin_toolbar_search
   - admin_toolbar_tools
+  # Install Autosave Form.
+  - autosave_form
   # Install Config log.
   - config_log
   # Install Gin theme and base modules that extend it.
@@ -35,6 +37,8 @@ install:
   - publication_date
   # Install Save and Edit
   - save_edit
+  # Install Trash.
+  - trash
   # Install Views AJAX History
   - views_ajax_history
   # Install Views Bulk Operations
@@ -65,6 +69,23 @@ config:
       simple_config_update:
         max_bundle_number: 3
         hoverintent_functionality: false
+    # Update autosave_form settings
+    autosave_form.messages:
+      entity_saved_in_background_alert_message: 'The content has been modified elsewhere. As a result, autosaving has been disabled and autosaved states for the current page have been deleted. Autosave will be reactivated after reloading the page.'
+      langcode: en
+    autosave_form.settings:
+      interval: 60000
+      only_on_form_change: false
+      active_on:
+        content_entity_forms: true
+        config_entity_forms: false
+      notification:
+        active: true
+        message: 'Saving draft...'
+        delay: 1000
+      allowed_content_entity_types: {  }
+      allowed_new: true
+      langcode: en
     # Set and unset Gin blocks.
     block.block.gin_admin:
       simple_config_update:
@@ -96,7 +117,7 @@ config:
         track_enabled_base_fields: true
         local_task_enabled_entity_types:
           - media
-    # Update gin settings      -
+    # Update gin settings
     gin.settings:
       simple_config_update:
         preset_accent_color: 'green'
@@ -118,3 +139,13 @@ config:
     system.theme:
       simple_config_update:
         admin: gin
+    # Update trash settings
+    trash.settings:
+      enabled_entity_types:
+        file: {  }
+        media: {  }
+        node: {  }
+        paragraph: {  }
+      auto_purge:
+        enabled: false
+        after: null
