@@ -69,23 +69,6 @@ config:
       simple_config_update:
         max_bundle_number: 3
         hoverintent_functionality: false
-    # Update autosave_form settings
-    autosave_form.messages:
-      entity_saved_in_background_alert_message: 'The content has been modified elsewhere. As a result, autosaving has been disabled and autosaved states for the current page have been deleted. Autosave will be reactivated after reloading the page.'
-      langcode: en
-    autosave_form.settings:
-      interval: 60000
-      only_on_form_change: false
-      active_on:
-        content_entity_forms: true
-        config_entity_forms: false
-      notification:
-        active: true
-        message: 'Saving draft...'
-        delay: 1000
-      allowed_content_entity_types: {  }
-      allowed_new: true
-      langcode: en
     # Set and unset Gin blocks.
     block.block.gin_admin:
       simple_config_update:
@@ -139,13 +122,5 @@ config:
     system.theme:
       simple_config_update:
         admin: gin
-    # Update trash settings
-    trash.settings:
-      enabled_entity_types:
-        file: {  }
-        media: {  }
-        node: {  }
-        paragraph: {  }
-      auto_purge:
         enabled: false
         after: null
