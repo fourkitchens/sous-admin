@@ -12,6 +12,8 @@ install:
   - admin_toolbar
   - admin_toolbar_search
   - admin_toolbar_tools
+  # Install Autosave Form.
+  - autosave_form
   # Install Config log.
   - config_log
   # Install Gin theme and base modules that extend it.
@@ -35,6 +37,8 @@ install:
   - publication_date
   # Install Save and Edit
   - save_edit
+  # Install Trash.
+  - trash
   # Install Views AJAX History
   - views_ajax_history
   # Install Views Bulk Operations
@@ -96,7 +100,7 @@ config:
         track_enabled_base_fields: true
         local_task_enabled_entity_types:
           - media
-    # Update gin settings      -
+    # Update gin settings
     gin.settings:
       simple_config_update:
         preset_accent_color: 'green'
