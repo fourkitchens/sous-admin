@@ -122,5 +122,3 @@ config:
     system.theme:
       simple_config_update:
         admin: gin
-        enabled: false
-        after: null
