@@ -18,7 +18,6 @@ install:
   - config_log
   # Install Gin theme and base modules that extend it.
   - gin
-  - gin_toolbar
   # Install Entity Usuage
   - entity_usage
   # Install Field Group and dependencies
@@ -33,6 +32,9 @@ install:
   - login_history
   # Install Media Library Edit
   - media_library_edit
+  # Install Navigation
+  - navigation
+  - navigation_extra_tools
   # Install Publication Date
   - publication_date
   # Install Save and Edit
