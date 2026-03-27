@@ -59,6 +59,9 @@ config:
       - block.block.gin_page_title
       - block.block.gin_primary_local_tasks
       - block.block.gin_secondary_local_tasks
+    navigation:
+      - navigation.settings
+      - navigation.block_layout
     login_destination:
       - login_destination.destination.admins_and_editors_login_destination
   actions:
