@@ -17,7 +17,6 @@
         "drupal/config_log": "^4.0",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/field_group": "^4.0",
-        "drupal/conditional_fields": "^4.0@alpha",
         "drupal/gin": "*",
         "drupal/login_destination": "^2.0@beta",
         "drupal/login_history": "^2.0@alpha",
