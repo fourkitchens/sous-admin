@@ -17,6 +17,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/field_group": "^4.0",
         "drupal/gin": "*",
+        "drupal/linkit": "^7.0",
         "drupal/login_destination": "^2.0@beta",
         "drupal/login_history": "^2.0@alpha",
         "drupal/media_library_edit": "^3.0",
