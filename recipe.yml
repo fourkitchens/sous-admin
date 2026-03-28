@@ -4,7 +4,6 @@ type: 'Site'
 recipes:
   # Install core recipes
   - core/recipes/core_recommended_performance
-  - core/recipes/core_recommended_maintenance
 install:
   # Install core dependencies.
   - node
