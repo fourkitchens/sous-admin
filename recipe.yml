@@ -20,6 +20,8 @@ install:
   - field_group
   # Install Field UI
   - field_ui
+  # Install Linkit
+  - linkit
   # Install Login Destination
   - login_destination
   # Install Login History
