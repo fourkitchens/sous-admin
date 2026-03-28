@@ -59,15 +59,6 @@ config:
       - system.menu.content
       - system.menu.navigation-user-links
   actions:
-    # Update admin_toolbar settings
-    admin_toolbar.settings:
-      simple_config_update:
-        menu_depth: 3
-    # Update admin_toolbar_tools settings
-    admin_toolbar_tools.settings:
-      simple_config_update:
-        max_bundle_number: 3
-        hoverintent_functionality: false
     # Set and unset Gin blocks.
     block.block.gin_admin:
       simple_config_update:
