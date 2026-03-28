@@ -6,6 +6,7 @@ recipes:
   - core/recipes/core_recommended_performance
 install:
   # Install core dependencies.
+  - automated_cron
   - node
   # Install Autosave Form.
   - autosave_form
@@ -34,6 +35,8 @@ install:
   - publication_date
   # Install Save and Edit
   - save_edit
+  # Install Tagify
+  - tagify
   # Install Trash.
   - trash
   # Install Views AJAX History
