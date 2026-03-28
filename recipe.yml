@@ -35,6 +35,8 @@ install:
   - publication_date
   # Install Save and Edit
   - save_edit
+  # Install Scheduler
+  - scheduler
   # Install Tagify
   - tagify
   # Install Trash.
