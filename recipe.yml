@@ -8,10 +8,6 @@ recipes:
 install:
   # Install core dependencies.
   - node
-  - toolbar
-  - admin_toolbar
-  - admin_toolbar_search
-  - admin_toolbar_tools
   # Install Autosave Form.
   - autosave_form
   # Install Config log.
@@ -45,9 +41,6 @@ install:
   - views_bulk_operations
 config:
   import:
-    admin_toolbar: '*'
-    admin_toolbar_search: '*'
-    admin_toolbar_tools: '*'
     gin:
       - gin.settings
       - block.block.gin_breadcrumbs
@@ -59,6 +52,12 @@ config:
       - block.block.gin_secondary_local_tasks
     login_destination:
       - login_destination.destination.admins_and_editors_login_destination
+    navigation:
+      - navigation.settings
+      - navigation.block_layout
+    system:
+      - system.menu.content
+      - system.menu.navigation-user-links
   actions:
     # Update admin_toolbar settings
     admin_toolbar.settings:
