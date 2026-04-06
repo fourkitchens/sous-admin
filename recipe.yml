@@ -56,65 +56,81 @@ config:
       - block.block.gin_page_title
       - block.block.gin_primary_local_tasks
       - block.block.gin_secondary_local_tasks
+    linkit:
+      - linkit.linkit_profile.default
     login_destination:
       - login_destination.destination.admins_and_editors_login_destination
-    navigation:
-      - navigation.settings
-      - navigation.block_layout
-    system:
-      - system.menu.content
-      - system.menu.navigation-user-links
   actions:
     # Set and unset Gin blocks.
     block.block.gin_admin:
-      simple_config_update:
+      simpleConfigUpdate:
         status: false
     block.block.gin_branding:
-      simple_config_update:
+      simpleConfigUpdate:
         status: false
     block.block.gin_local_actions:
-      simple_config_update:
+      simpleConfigUpdate:
         region: content
         weight: -10
     block.block.gin_local_tasks:
-      simple_config_update:
+      simpleConfigUpdate:
         status: false
     block.block.gin_page_title:
-      simple_config_update:
+      simpleConfigUpdate:
         region: header
         weight: -10
     block.block.gin_primary_local_tasks:
-      simple_config_update:
+      simpleConfigUpdate:
         region: header
         weight: -5
     block.block.gin_tools:
-      simple_config_update:
+      simpleConfigUpdate:
         status: false
     # Update entity_usage
     entity_usage.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         track_enabled_base_fields: true
         local_task_enabled_entity_types:
           - media
     # Update gin settings
     gin.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         preset_accent_color: 'green'
         classic_toolbar: 'horizontal'
+    # Update the default Linkit profile.
+    linkit.linkit_profile.default:
+      simpleConfigUpdate:
+        matchers:
+          556010a3-e317-48b3-b4ed-854c10f4b950:
+            id: 'entity:node'
+            uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
+            settings:
+              metadata: '[node:content-type:name] | [node:url:path]'
+              bundles: {  }
+              group_by_bundle: true
+              substitution_type: canonical
+              limit: 50
+              include_unpublished: false
+            weight: -9
+          40b16ec1-5dfd-4292-ba8f-f7b849993e92:
+            id: external
+            uuid: 40b16ec1-5dfd-4292-ba8f-f7b849993e92
+            settings: {  }
+            weight: -10
     # Update login_destination settings
     login_destination.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         preserve_destination: TRUE
     # Update the node settings to use the admin theme.
     node.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         use_admin_theme: true
     # Update save_edit settings
     save_edit.settings:
-      simple_config_update:
+      simpleConfigUpdate:
         button_value: ''
         button_weight: '-10'
     # Update the admin theme to Gin in Theme settings.
     system.theme:
-      simple_config_update:
+      simpleConfigUpdate:
         admin: gin
