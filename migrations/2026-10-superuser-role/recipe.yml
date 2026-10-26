@@ -1,0 +1,12 @@
+name: 'Sous missing administrator role'
+description: 'Explicitly creates the Sous administrator role only when it is missing; existing roles and user assignments are left unchanged.'
+type: 'Configuration migration'
+config:
+  actions:
+    user.role.superuser:
+      createIfNotExists:
+        langcode: en
+        status: true
+        label: Superuser
+        weight: 2
+        is_admin: true

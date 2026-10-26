@@ -1,0 +1,32 @@
+{
+  "name": "@fourkitchens/sous-admin-release-tools",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Release tooling for the sous-admin Composer recipe.",
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fourkitchens/sous-admin.git"
+  },
+  "scripts": {
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run",
+    "release:test": "node devops/tests/release.mjs"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^12.0.10",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "conventional-changelog-conventionalcommits": "^10.4.1",
+    "semantic-release": "^25.0.9"
+  },
+  "engines": {
+    "node": "^24.22.1"
+  },
+  "packageManager": "npm@11.21.1",
+  "overrides": {
+    "@semantic-release/release-notes-generator": {
+      "conventional-changelog-writer": "^9.3.0"
+    }
+  }
+}
