@@ -4,9 +4,14 @@ type: 'Site'
 recipes:
   # Install core recipes
   - core/recipes/core_recommended_performance
+  # Share the profile without applying the full Formats/CKEditor recipe.
+  # Slash-containing includes are Drupal-root relative, matching web/recipes.
+  - recipes/sous-formats/recipes/linkit
 install:
   # Install core dependencies.
   - automated_cron
+  - media
+  - media_library
   - node
   # Install Autosave Form.
   - autosave_form
@@ -20,8 +25,6 @@ install:
   - field_group
   # Install Field UI
   - field_ui
-  # Install Linkit
-  - linkit
   # Install Login Destination
   - login_destination
   # Install Login History
@@ -46,6 +49,18 @@ install:
   # Install Views Bulk Operations
   - views_bulk_operations
 config:
+  # Preserve existing roles while validating the Gin baseline. The shared
+  # Linkit subrecipe separately preserves project-owned profiles.
+  strict:
+    - gin.settings
+    - block.block.gin_breadcrumbs
+    - block.block.gin_content
+    - block.block.gin_local_actions
+    - block.block.gin_messages
+    - block.block.gin_page_title
+    - block.block.gin_primary_local_tasks
+    - block.block.gin_secondary_local_tasks
+    - login_destination.destination.admins_and_editors_login_destination
   import:
     gin:
       - gin.settings
@@ -56,23 +71,23 @@ config:
       - block.block.gin_page_title
       - block.block.gin_primary_local_tasks
       - block.block.gin_secondary_local_tasks
-    linkit:
-      - linkit.linkit_profile.default
+    navigation:
+      - system.menu.content
     login_destination:
       - login_destination.destination.admins_and_editors_login_destination
   actions:
-    # Set and unset Gin blocks.
-    block.block.gin_admin:
+    # Disable legacy Gin blocks only when that Gin version provides them.
+    '?block.block.gin_admin':
       simpleConfigUpdate:
         status: false
-    block.block.gin_branding:
+    '?block.block.gin_branding':
       simpleConfigUpdate:
         status: false
     block.block.gin_local_actions:
       simpleConfigUpdate:
         region: content
         weight: -10
-    block.block.gin_local_tasks:
+    '?block.block.gin_local_tasks':
       simpleConfigUpdate:
         status: false
     block.block.gin_page_title:
@@ -83,7 +98,7 @@ config:
       simpleConfigUpdate:
         region: header
         weight: -5
-    block.block.gin_tools:
+    '?block.block.gin_tools':
       simpleConfigUpdate:
         status: false
     # Update entity_usage
@@ -97,26 +112,6 @@ config:
       simpleConfigUpdate:
         preset_accent_color: 'green'
         classic_toolbar: 'horizontal'
-    # Update the default Linkit profile.
-    linkit.linkit_profile.default:
-      simpleConfigUpdate:
-        matchers:
-          556010a3-e317-48b3-b4ed-854c10f4b950:
-            id: 'entity:node'
-            uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
-            settings:
-              metadata: '[node:content-type:name] | [node:url:path]'
-              bundles: {  }
-              group_by_bundle: true
-              substitution_type: canonical
-              limit: 50
-              include_unpublished: false
-            weight: -9
-          40b16ec1-5dfd-4292-ba8f-f7b849993e92:
-            id: external
-            uuid: 40b16ec1-5dfd-4292-ba8f-f7b849993e92
-            settings: {  }
-            weight: -10
     # Update login_destination settings
     login_destination.settings:
       simpleConfigUpdate:
